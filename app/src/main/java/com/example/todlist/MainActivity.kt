@@ -2,6 +2,7 @@ package com.example.todlist
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 
 
 class MainActivity : AppCompatActivity() {
@@ -9,7 +10,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        setup
+        Toast.makeText(this,"what is this", Toast.LENGTH_SHORT)
+
+
     }
 
 
