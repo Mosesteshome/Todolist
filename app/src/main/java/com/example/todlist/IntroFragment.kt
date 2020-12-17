@@ -21,7 +21,6 @@ class IntroFragment : Fragment() {
         val view =inflater.inflate(R.layout.fragment_intro, container, false)
 
         view.intro_done.setOnClickListener {
-
             findNavController().navigate(R.id.action_introFragment_to_mianFragment)
         }
 
