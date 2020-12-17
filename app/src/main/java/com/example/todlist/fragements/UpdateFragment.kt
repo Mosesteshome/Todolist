@@ -58,8 +58,10 @@ class UpdateFragment : Fragment() {
             mUserViewModel.updateUser(updateUser)
             Toast.makeText(requireContext(),"successfully updated!", Toast.LENGTH_LONG)
             findNavController().navigate(R.id.action_updateFragment3_to_mianFragment)
-        }else
+        }else{
             Toast.makeText(requireContext(),"please fill out all fields", Toast.LENGTH_LONG)
+        }
+
 
 
     }
