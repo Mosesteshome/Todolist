@@ -38,7 +38,7 @@ class AddFragment : Fragment() {
          mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
         view.buttonadd.setOnClickListener {
-            Toast.makeText(requireContext(),"button clicked",Toast.LENGTH_LONG)
+
            insertDataToDatabase()
 
 
@@ -52,19 +52,21 @@ class AddFragment : Fragment() {
         val title = editTextTexttitle.text.toString()
         val description = editTextdescription.text.toString()
 
-        if(inputcheck(title, description)){
+        if(inputCheck(title, description)){
             // creare user object
             val user= User(0,title,description)
             // add data to database
             mUserViewModel.addUser(user)
             Toast.makeText(requireContext(),"successfully added!",Toast.LENGTH_LONG)
             findNavController().navigate(R.id.action_addFragment_to_mianFragment)
-        }else
+        }else{
             Toast.makeText(requireContext(),"please fill out all fields",Toast.LENGTH_LONG)
+        }
+
 
 
     }
-    private fun inputcheck(title:String,description:String): Boolean {
+    private fun inputCheck(title:String,description:String): Boolean {
         return !(TextUtils.isEmpty(title) && TextUtils.isEmpty(description))
 
     }

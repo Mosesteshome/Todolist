@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_mianFragment_to_addFragment"
             app:destination="@id/addFragment" />
+        <action
+            android:id="@+id/action_mianFragment_to_updateFragment3"
+            app:destination="@id/updateFragment3" />
     </fragment>
     <fragment
         android:id="@+id/addFragment"
@@ -25,11 +28,23 @@
     </fragment>
     <fragment
         android:id="@+id/introFragment"
-        android:name="com.example.todlist.IntroFragment"
+        android:name="com.example.todlist.fragements.IntroFragment"
         android:label="fragment_intro"
         tools:layout="@layout/fragment_intro" >
         <action
             android:id="@+id/action_introFragment_to_mianFragment"
             app:destination="@id/mianFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment3"
+        android:name="com.example.todlist.fragements.UpdateFragment"
+        android:label="fragment_update"
+        tools:layout="@layout/fragment_update" >
+        <action
+            android:id="@+id/action_updateFragment3_to_mianFragment"
+            app:destination="@id/mianFragment" />
+        <argument
+            android:name="currentUser"
+            app:argType="com.example.todlist.Database.User" />
     </fragment>
 </navigation>
