@@ -8,7 +8,7 @@ data class User(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     val title: String ,
-    val Desc: String)// desc is for Description
+    val description: String)// desc is for Description
 {
 
 }

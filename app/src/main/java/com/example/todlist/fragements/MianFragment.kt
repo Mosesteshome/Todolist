@@ -1,9 +1,9 @@
 package com.example.todlist.fragements
 
 
+
 import android.app.Fragment
 import android.os.Bundle
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +12,6 @@ import androidx.navigation.fragment.NavHostFragment.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.todlist.R
 import kotlinx.android.synthetic.main.fragment_mian.view.*
-
 
 
 class MianFragment : androidx.fragment.app.Fragment() {

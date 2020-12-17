@@ -1,13 +1,20 @@
 package com.example.todlist.fragements
 
 import android.os.Bundle
+import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment.findNavController
+import androidx.navigation.fragment.findNavController
+import com.example.todlist.Database.User
 import com.example.todlist.Database.UserViewModel
 import com.example.todlist.R
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_add.view.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -26,13 +33,14 @@ class AddFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_add, container, false)
+        val view=inflater.inflate(R.layout.fragment_add, container, false)
 
-        mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
         view.buttonadd.setOnClickListener {
-            insertDatatoDatabase()
+            Toast.makeText(requireContext(),"button clicked",Toast.LENGTH_LONG)
+           insertDataToDatabase()
+
 
         }
 
@@ -40,8 +48,24 @@ class AddFragment : Fragment() {
         return view
     }
 
-    private fun insertDatatoDatabase() {
-        val
+    private fun insertDataToDatabase() {
+        val title = editTextTexttitle.text.toString()
+        val description = editTextdescription.text.toString()
+
+        if(inputcheck(title, description)){
+            // creare user object
+            val user= User(0,title,description)
+            // add data to database
+            mUserViewModel.addUser(user)
+            Toast.makeText(requireContext(),"successfully added!",Toast.LENGTH_LONG)
+            findNavController().navigate(R.id.action_addFragment_to_mianFragment)
+        }else
+            Toast.makeText(requireContext(),"please fill out all fields",Toast.LENGTH_LONG)
+
+
+    }
+    private fun inputcheck(title:String,description:String): Boolean {
+        return !(TextUtils.isEmpty(title) && TextUtils.isEmpty(description))
 
     }
 

@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/introFragment"
-        android:name="com.example.todlist.IntroFragment"
+        android:name="com.example.todlist.fragements.IntroFragment"
         android:label="fragment_intro"
         tools:layout="@layout/fragment_intro" >
         <action
