@@ -2,6 +2,7 @@ package com.example.todlist.Database
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import java.util.*
 
 @Dao
 interface UserDao {
@@ -15,4 +16,8 @@ interface UserDao {
 
     @Query("select * FROM user_data ORDER BY id asc")
     fun readAllData():LiveData<List<User>>
+
+    @Query("SELECT * FROM user_data WHERE date BETWEEN :from AND :to")
+    fun findUsersBornBetweenDates(from: Date, to: Date): List<User>
 }
+

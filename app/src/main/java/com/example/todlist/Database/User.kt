@@ -17,8 +17,8 @@ data class User(
         val title: String,
         val description: String,
          var statu:Boolean,
-        @TypeConverters({DateTypeConverter.class })
-        val date:Date
+        @TypeConverters(DateTypeConverter::class)
+       var date:Date?
 ) :Parcelable
 {
 

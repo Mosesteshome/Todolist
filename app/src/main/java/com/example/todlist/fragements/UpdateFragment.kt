@@ -90,7 +90,7 @@ class UpdateFragment : Fragment() {
         if(inputCheck(title, description, statu)){
             // creare user object
 
-            val updateUser= User(args.currentUser.id,title,description,statu)
+            val updateUser= User(args.currentUser.id,title,description,statu,date = null)
             // add data to database
             mUserViewModel.updateUser(updateUser)
             Toast.makeText(requireContext(),"successfully updated!", Toast.LENGTH_LONG)

@@ -7,11 +7,12 @@ import java.util.*
 class DateTypeConverter {
     @TypeConverter
     fun fromTimestamp(value: Long?): Date? {
-        return if (value == null) null else Date(value)
+        return value?.let { Date(it) }
     }
 
     @TypeConverter
     fun dateToTimestamp(date: Date?): Long? {
-        return date?.time
+        return date?.time?.toLong()
+
     }
 }

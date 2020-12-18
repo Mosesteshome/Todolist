@@ -33,6 +33,7 @@ class AddFragment : Fragment(), DatePickerDialog.OnDateSetListener, TimePickerDi
     // TODO: Rename and change types of parameters
     private lateinit var mUserViewModel:UserViewModel
     private var statu:Boolean=false
+    private var date:Date = Calendar.getInstance().getTime()
     private var day = 0
     private var month = 0
     private var year = 0
@@ -71,10 +72,11 @@ class AddFragment : Fragment(), DatePickerDialog.OnDateSetListener, TimePickerDi
     private fun insertDataToDatabase() {
         val title = editTextTexttitle.text.toString()
         val description = editTextdescription.text.toString()
+        val date: Date = Calendar.getInstance().getTime()
 
-        if(inputCheck(title, description,statu)){
+        if(inputCheck(title, description,statu,date)){
             // creare user object
-            val user= User(0, title, description, statu)
+            val user= User(0, title, description, statu,date)
             // add data to database
             mUserViewModel.addUser(user)
             Toast.makeText(requireContext(),"successfully added!",Toast.LENGTH_LONG).show()
@@ -83,8 +85,8 @@ class AddFragment : Fragment(), DatePickerDialog.OnDateSetListener, TimePickerDi
             Toast.makeText(requireContext(),"please fill out all fields",Toast.LENGTH_LONG).show()
         }
  }
-    private fun inputCheck(title: String, description: String, statu: Boolean): Boolean {
-        return !(TextUtils.isEmpty(title) && TextUtils.isEmpty(description))
+    private fun inputCheck(title: String, description: String, statu: Boolean,date:Date): Boolean {
+        return !(TextUtils.isEmpty(title) && TextUtils.isEmpty(description) && TextUtils.isEmpty(date.toString()))
 
     }
 
