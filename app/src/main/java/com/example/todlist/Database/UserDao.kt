@@ -17,6 +17,12 @@ interface UserDao {
     @Query("select * FROM user_data ORDER BY id asc")
     fun readAllData():LiveData<List<User>>
 
+    @Delete
+    suspend fun deleteUser(user:User)
+
+    @Query("DELETE FROM user_data")
+    suspend fun deleteAllUsers()
+
     @Query("SELECT * FROM user_data WHERE date BETWEEN :from AND :to")
     fun findUsersBornBetweenDates(from: Date, to: Date): List<User>
 }

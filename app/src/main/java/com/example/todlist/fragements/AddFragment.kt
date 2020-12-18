@@ -33,18 +33,18 @@ class AddFragment : Fragment(), DatePickerDialog.OnDateSetListener, TimePickerDi
     // TODO: Rename and change types of parameters
     private lateinit var mUserViewModel:UserViewModel
     private var statu:Boolean=false
-    private var date:Date = Calendar.getInstance().getTime()
-    private var day = 0
-    private var month = 0
-    private var year = 0
-    private var hour = 0
-    private var minute = 0
+    var date:Date = Calendar.getInstance().getTime()
+    var day = 0
+    var month = 0
+    var year = 0
+    var hour = 0
+    var minute = 0
 
-    private var savedDay = 0
-    private var savedMonth = 0
-    private var savedYear = 0
-    private var savedHour = 0
-    private var savedMinute = 0
+    var savedDay = 0
+    var savedMonth = 0
+    var savedYear = 0
+    var savedHour = 0
+    var savedMinute = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
