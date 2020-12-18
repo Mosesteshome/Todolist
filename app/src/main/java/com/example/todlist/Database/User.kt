@@ -4,6 +4,8 @@ import android.os.Parcelable
 import android.widget.CheckBox
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.TypeConverters
+import com.example.todlist.DateTypeConverter
 import kotlinx.android.parcel.Parcelize
 import java.util.*
 
@@ -14,8 +16,9 @@ data class User(
         val id: Int,
         val title: String,
         val description: String,
-         var statu:Boolean
-        //val date:Date
+         var statu:Boolean,
+        @TypeConverters({DateTypeConverter.class })
+        val date:Date
 ) :Parcelable
 {
 

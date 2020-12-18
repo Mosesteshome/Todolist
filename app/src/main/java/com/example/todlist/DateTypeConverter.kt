@@ -14,5 +14,4 @@ class DateTypeConverter {
     fun dateToTimestamp(date: Date?): Long? {
         return date?.time
     }
-
 }
