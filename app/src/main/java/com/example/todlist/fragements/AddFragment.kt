@@ -77,7 +77,7 @@ class AddFragment : Fragment(), DatePickerDialog.OnDateSetListener, TimePickerDi
             val user= User(0, title, description, statu)
             // add data to database
             mUserViewModel.addUser(user)
-            Toast.makeText(requireContext(),"successfully added!  ",Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(),"successfully added!",Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_addFragment_to_mianFragment)
         }else{
             Toast.makeText(requireContext(),"please fill out all fields",Toast.LENGTH_LONG).show()
