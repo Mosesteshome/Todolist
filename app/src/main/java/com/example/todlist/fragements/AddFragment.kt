@@ -72,7 +72,7 @@ class AddFragment : Fragment(), DatePickerDialog.OnDateSetListener, TimePickerDi
     private fun insertDataToDatabase() {
         val title = editTextTexttitle.text.toString()
         val description = editTextdescription.text.toString()
-        val date: Date = Calendar.getInstance().getTime()
+        val date: Date = Date(savedYear,savedMonth,savedDay,savedHour,savedMinute)
 
         if(inputCheck(title, description,statu,date)){
             // creare user object
