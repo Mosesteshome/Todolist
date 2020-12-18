@@ -1,10 +1,19 @@
 <resources>
     <string name="app_name">To do list</string>
     <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="intro_title">Welcome to Notebook pro!</string>
+    <string name="intro_text">We strive to help you achieve your best,
+    plan your daily activies here with us and we promise to do our best
+    to help you achieve your goal</string>
+    <string name="amount">amount of activities per day</string>
+    <string name="intro_done">view activities</string>
+    <string name="intro_amount">please enter the amount of activities you think you can handle per day</string>
+    <string name="want_to_check_your_status">want to check your status?</string>
+    <string name="status">status</string>
+    <string name="done">done</string>
+    <string name="update">Update</string>
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="intro_title">editintro</string>
-    <string name="intro_text">intro text</string>
-    <string name="amount">intro ammount</string>
-    <string name="intro_done">intro done</string>
-    <string name="intro_amount">amount</string>
+    <string name="statsu_messege">Your day is going greate</string>
 </resources>

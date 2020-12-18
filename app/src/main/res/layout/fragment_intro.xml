@@ -5,20 +5,52 @@
     <!-- TODO: Update blank fragment layout -->
 
 
-    <TextView android:layout_height="match_parent" android:layout_width="match_parent" android:text="@string/hello_blank_fragment"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
     -<LinearLayout android:layout_height="match_parent" android:layout_width="match_parent" android:orientation="vertical">
 
-    <TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:text="@string/intro_title" android:id="@+id/intro_tile"/>
+    <TextView
+        android:id="@+id/intro_tile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:text="@string/intro_title"
+        android:textAlignment="center"
+        android:textColor="#30BDCF"
+        android:textSize="24sp" />
 
-    <EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:text="@string/intro_text" android:id="@+id/intro_text" android:autofillHints="" android:inputType="textMultiLine" android:gravity="start|top" android:ems="10"/>
+    <EditText
+        android:id="@+id/intro_text"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:text="@string/intro_text"
+        android:textAlignment="textStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-    <TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:text="@string/amount" android:id="@+id/amount"/>
+    <EditText
+        android:id="@+id/intro_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/intro_amount"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:textSize="12sp" />
 
-    <EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/intro_amount" android:inputType="textPersonName" android:ems="10" android:importantForAutofill="no" android:hint="@string/intro_amount"/>
-
-    <Button android:layout_height="wrap_content" android:layout_width="match_parent" android:text="@string/intro_done" android:id="@+id/intro_done"/>
+    <Button
+        android:id="@+id/intro_done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/intro_done" />
 
 </LinearLayout>
 

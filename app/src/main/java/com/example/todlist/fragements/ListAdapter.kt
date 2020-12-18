@@ -30,6 +30,13 @@ class ListAdapter :RecyclerView.Adapter<ListAdapter.MyViewHolder>(){
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = userList[position]
+        //if(currentItem.statu==true){
+          //  holder.itemView.done_text1
+        //}//else{
+          //  holder.itemView.done_text1.setText("not done!")
+        //}
+        if (currentItem.statu){
+        holder.itemView.done_text1.text= ("done")}
         holder.itemView.title_txt.text = currentItem.title.toString()
         holder.itemView.desc_txt.text = currentItem.description.toString()
         holder.itemView.rowLayout.setOnClickListener{
