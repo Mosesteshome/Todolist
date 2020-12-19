@@ -13,9 +13,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.todlist.Api.PostModel
+import com.example.todlist.Api.RetrofitInterface
 import com.example.todlist.Database.UserViewModel
 import com.example.todlist.R
 import kotlinx.android.synthetic.main.fragment_mian.view.*
+import retrofit2.Callback
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 
 class MianFragment : androidx.fragment.app.Fragment() {
@@ -38,6 +43,8 @@ class MianFragment : androidx.fragment.app.Fragment() {
         mUserViewModel.readAllData.observe(viewLifecycleOwner, Observer { user->
             adapter.setData(user)
         })
+
+
 
        view.floatingbutton.setOnClickListener{
            findNavController().navigate(R.id.action_mianFragment_to_addFragment)

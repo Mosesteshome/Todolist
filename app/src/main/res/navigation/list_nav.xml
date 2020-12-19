@@ -55,4 +55,9 @@
         android:name="com.example.todlist.fragements.StatusFragment"
         android:label="fragment_status"
         tools:layout="@layout/fragment_status" />
+    <fragment
+        android:id="@+id/navFragment"
+        android:name="com.example.todlist.NavFragment"
+        android:label="fragment_nav"
+        tools:layout="@layout/fragment_nav" />
 </navigation>
